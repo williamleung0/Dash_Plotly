@@ -25,7 +25,6 @@ data_dict = {"Oil Temperature":oil_temps,
 "Speed":speeds,
 "Throttle Position":throttle_pos}
 
-
 def update_obd_values(times, oil_temps, intake_temps, coolant_temps, rpms, speeds, throttle_pos):
 
     times.append(time.time())

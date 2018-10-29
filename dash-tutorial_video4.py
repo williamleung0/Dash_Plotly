@@ -19,7 +19,6 @@ app.layout = html.Div([
         id='graph-update',
         interval=1000
     )
-
 ])
 
 @app.callback(Output('live-graph','figure'),
@@ -38,8 +37,10 @@ def update_graph():
         name='Scatter',
         mode='lines+markers'
     )
-    return{'data':[data],'layout':go.Layout(xaxis=dict(range=[min(X),max(X)]),
-    yaxis=dict(range=[min(Y),max(Y)]))}
+    return{
+        'data':[data],
+        'layout':go.Layout(xaxis=dict(range=[min(X),max(X)]),
+                        yaxis=dict(range=[min(Y),max(Y)]))}
 
 if __name__ == "__main__":
     app.run_server(debug=True)
